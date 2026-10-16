@@ -1,0 +1,39 @@
+{
+  "educational": true,
+  "month": {
+    "auto_on_time": "1630368.0000000",
+    "manual": "369632.0000000",
+    "baseline": "1500000.00",
+    "system": "810000",
+    "process": "1087224.000000000",
+    "effect": "412776.000000000"
+  },
+  "timely_995": {
+    "auto_on_time": "1623840.0000000",
+    "manual": "376160.0000000",
+    "baseline": "1500000.00",
+    "system": "810000",
+    "process": "1092120.000000000",
+    "effect": "407880.000000000"
+  },
+  "stationary_effect_36_months": "11259936.000000000",
+  "ramp_effect_36_months": "9670327.200000000",
+  "first_positive_month": 13,
+  "zero_events_upper_n10000": 0.000299528359776612,
+  "queue_peak": {
+    "1": {
+      "count": 540,
+      "p95_s": 7.465555555555682,
+      "max_wait_s": 7.785555555555689,
+      "violations": 513
+    },
+    "2": {
+      "count": 540,
+      "p95_s": 0.07000000000000028,
+      "max_wait_s": 0.0,
+      "violations": 0
+    }
+  },
+  "bundle_integrity": true,
+  "production_approval": false
+}

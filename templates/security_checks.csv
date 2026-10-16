@@ -1,0 +1,7 @@
+check,scenario,expected,observed,evidence,status
+bundle-integrity,change one byte,verification fails,,,not-tested
+path-boundary,manifest refers outside root,verification fails,,,not-tested
+tool-auth,unapproved action,action denied,,,not-tested
+device-isolation,neighbor peak and crash,independence or documented limitation,,,not-tested
+closed-network,run without egress,no undeclared connections,,,not-tested
+diagnostic-export,inspect archive,no secrets or unauthorized records,,,not-tested

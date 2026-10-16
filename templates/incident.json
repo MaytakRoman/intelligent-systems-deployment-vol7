@@ -1,0 +1,17 @@
+{
+  "incident_id": "EXAMPLE-NOT-OBSERVED",
+  "status": "template",
+  "detected_at": null,
+  "impact_window": {
+    "start": null,
+    "end": null
+  },
+  "affected_release": null,
+  "eligible_events": null,
+  "violations": null,
+  "timeline": [],
+  "evidence": [],
+  "cause": null,
+  "restoration": null,
+  "followup_actions": []
+}

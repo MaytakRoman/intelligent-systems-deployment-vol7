@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "release_id": "vision-line-r17",
+  "components": {
+    "model": "model.bin",
+    "preprocess": "preprocess.json",
+    "thresholds": "thresholds.json",
+    "runtime": "runtime.lock"
+  },
+  "scope": {
+    "products": [
+      "product-A",
+      "product-B"
+    ],
+    "deadline_ms": 450
+  },
+  "previous_release": "vision-line-r16",
+  "acceptance_report": "acceptance.json",
+  "files": {
+    "model.bin": "7e823242c63cb4ac824fa6e18c9f98536c8479fd4a57165afa7f2d2c851a738c",
+    "preprocess.json": "593da5a6f53d196f4cba438b664693da0429cbef4068fb3ddb1234c07667ed3b",
+    "thresholds.json": "0907657e50a658eef82a7f0e4dd25fbd63341d12fc41e2471dbff0c4823f9d3d",
+    "runtime.lock": "5a5f6b2a0fbdc9e272ed880f93df6a859fda0d1d59977150c38f9126f8615ea1",
+    "acceptance.json": "333ccf60af3632294ef4f16be1179f2abb9662f28ff8f116e0788120c8ee5de9"
+  }
+}

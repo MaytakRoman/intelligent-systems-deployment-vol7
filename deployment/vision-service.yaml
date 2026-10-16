@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vision-service
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: vision-service
+  template:
+    metadata:
+      labels:
+        app: vision-service
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          minDomains: 3
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: vision-service
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: vision-service
+              topologyKey: kubernetes.io/hostname
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: server
+          # Учебный дайджест; тег r17 используется только для описания.
+          image: >-
+            repo/vision@sha256:0000000000000000000000000000000000000000000000000000000000000000
+          ports:
+            - containerPort: 8080
+          startupProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            periodSeconds: 5
+            failureThreshold: 60
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /alive
+              port: 8080
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: "2"
+              memory: 8Gi
+            limits:
+              cpu: "4"
+              memory: 12Gi
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: vision-service
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: vision-service

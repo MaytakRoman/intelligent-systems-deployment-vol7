@@ -1,0 +1,5 @@
+scenario,arrival_profile,replicas,hardware_units,p95_ms,p99_ms,deadline_misses,power_w,memory_bytes,evidence,decision
+normal,8/s,,,,,,,,,not-tested
+peak,"18/s,30s",,,,,,,,,not-tested
+node-loss,peak plus one hardware-unit loss,,,,,,,,,not-tested
+restore,clean environment,,,,,,,,,not-tested
